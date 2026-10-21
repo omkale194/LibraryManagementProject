@@ -1,0 +1,107 @@
+@charset "ISO-8859-1";
+:root {
+    --primary-color: #226B68;
+    --secondary-color: #F5D55F;
+    --text-color: #226B68;
+    --bg-color: #F4F1E9;
+}
+body {
+    background-color:lightskyblue;
+    color: var(--text-color);
+    font-family: Arial, sans-serif;
+    margin-top: 35px;
+}
+.container {
+background-color:#ffffff;       
+ border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card {
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+ .card:hover {
+    transform: translateY(-5px);
+}
+.card-body{
+    background-color:var(--bg-color) ;
+}
+.card-title {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.card-subtitle {
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+}
+
+.book-info {
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+.book-price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+ button{
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border: none;
+}
+button:hover {
+    background-color: #e0c14e;
+    color: var(--text-color);
+}
+hr {
+    border-top: 2px solid var(--secondary-color);
+    margin: 25px 0;
+}
+/* allbooklist.jsp styling */
+:root {
+    --primary-color: #226B68;
+    --secondary-color: #F5D55F;
+    --text-color: #333;
+    --bg-color: #F4F1E9;
+}
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding-top: 60px; /* Add space for the fixed navbar */
+}
+.navbar {
+    background-color: var(--primary-color);
+}
+.card {
+    background-color: #ffffff;
+    border: none;
+    transition: transform 0.3s;
+}
+.card:hover {
+    transform: translateY(-5px);
+}
+.card-title {
+    color: var(--primary-color);
+}
+.card-footer {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+}
+.btn-home {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border: none;
+}
+.btn-home:hover {
+    background-color: #e0c14e;
+    color: var(--text-color);
+}
+.page-title {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 2rem;
+}

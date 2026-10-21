@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Project Info-</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #226B68;
+            --secondary-color: #F5D55F;
+            --text-color: #333;
+            --bg-color: #F4F1E9;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        h1, h2 {
+            color: var(--primary-color);
+        }
+
+        .key-features li {
+            margin-bottom: 10px;
+        }
+
+        .section-title {
+            border-left: 5px solid var(--primary-color);
+            padding-left: 10px;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .hover-box {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .hover-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .icon-section i {
+            font-size: 4rem;
+            margin: 10px;
+            color: var(--primary-color);
+        }
+
+        .icon-section p {
+            margin-top: 10px;
+            font-size: 1.1rem;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+    </style>
+        <link rel="stylesheet" href="jspfile.css">
+
+</head>
+<body>
+    <div class="container mt-5">
+		<a href="/admin"><button class="btn btn-outline-success">Home</button></a>
+        <h1 class="text-center">Software Requirements</h1>
+        <div class="hover-box">
+            <h2 class="section-title">Frontend</h2>
+            <ul class="list-group">
+                <li class="list-group-item">Technologies Used:</li>
+                <li class="list-group-item">HTML: For structuring web pages and content.</li>
+                <li class="list-group-item">CSS: For styling and visual presentation.</li>
+                <li class="list-group-item">Bootstrap: To create a responsive design that adapts to various devices.</li>
+            </ul>
+
+            <h2 class="mt-4">Key Features:</h2>
+            <div class="highlight">
+                <h3>Admin Panel</h3>
+                <ul class="key-features">
+                    <li><strong>Login:</strong> Secure authentication for admin users.</li>
+                    <li><strong>Manage Books:</strong>
+                        <ul>
+                            <li>Add new books to the database.</li>
+                            <li>Delete existing books.</li>
+                            <li>Search books by genre, Find ISBN No.</li>
+                            <li>View all books in the library.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Staff Management:</strong> Maintain a table of members borrowing books, including their details and borrowing history.</li>
+                    <li><strong>Members</strong> Members Allowed to Read book and purchase it.</li>
+                </ul>
+            </div>
+
+            <div class="row icon-section text-center">
+                <div class="col-md-4">
+                    <i class="bi bi-file-earmark-code"></i>
+                    <p>HTML</p>
+                </div>
+                <div class="col-md-4">
+                    <i class="bi bi-palette-fill"></i>
+                    <p>CSS</p>
+                </div>
+                <div class="col-md-4">
+                    <i class="bi bi-bootstrap-fill"></i>
+                    <p>Bootstrap</p>
+                </div>
+            </div>
+        </div>
+        <div class="hover-box">
+            <h2 class="section-title">Backend</h2>
+            <h3 class="mt-4">Framework:</h3>
+            <ul class="list-group">
+                <li class="list-group-item">Spring Boot: To develop RESTful APIs that connect the frontend and backend.</li>
+            </ul>
+            <h3 class="mt-4">Server</h3>
+            <ul class="list-group">
+                <li class="list-group-item">Apache Tomcat: Apache Tomcat is the default embedded web server for running Spring Boot applications.</li>
+            </ul>
+            <h3 class="mt-4">Data Access:</h3>
+            <ul class="list-group">
+                <li class="list-group-item">Spring Data JPA: For ORM (Object-Relational Mapping) and efficient database interactions.</li>
+            </ul>
+
+            <h3 class="mt-4">Database:</h3>
+            <ul class="list-group">
+                <li class="list-group-item">MySQL: Used as the relational database management system for storing data.</li>
+            </ul>
+            <div class="row icon-section text-center">
+                <div class="col-md-4">
+                    <i class="bi bi-box-seam"></i>
+                    <p>Spring Boot</p>
+                </div>
+                <div class="col-md-4">
+                    <i class="bi bi-server"></i>
+                    <p>Apache Tomcat</p>
+                </div>
+                <div class="col-md-4">
+                    <i class="bi bi-database"></i>
+                    <p>MySQL</p>
+                </div>
+            </div>
+        </div>
+        <div class="hover-box">
+            <h2 class="section-title">Overall Info</h2>
+            <h3>Spring Boot</h3>
+            <ul class="list-group">
+                <li class="list-group-item">Dependencies Added:</li>
+                <li class="list-group-item">Spring Boot DevTools: For enhanced development experience, including automatic restarts and live reloads.</li>
+                <li class="list-group-item">MySQL Driver: To enable connectivity between the Spring Boot application and MySQL database.</li>
+                <li class="list-group-item">Spring Web: For building web applications, including RESTful APIs.</li>
+                <li class="list-group-item">Tomcat Jasper: For JSP support, allowing the use of JavaServer Pages in the application.</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+@charset "ISO-8859-1";
+:root {
+            --primary-color: #226B68;
+            --secondary-color: #F5D55F;
+            --text-color: #333;
+            --bg-color: #F4F1E9;
+        }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: Arial, sans-serif;
+            margin-top: 35px;
+        }
+        .container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        .form-control {
+            border-color: var(--primary-color);
+        }
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            font-size: 1rem;
+        }
+        .btn-primary:hover {
+            background-color: #1a5452;
+            border-color: #1a5452;
+        }
+        .btn-outline-primary {
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+            font-size: 1rem;
+        }
+        .btn-outline-primary:hover {
+            background-color: var(--primary-color);
+            color: #ffffff;
+        }
+        hr {
+            border-top: 2px solid var(--secondary-color);
+            margin: 25px 0;
+        }
+        table {
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        td {
+            padding: 10px 0;
+        }
+        #book-image {
+    max-width: 400;
+    height: auto;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+    .col-md-6 {
+        margin-bottom: 20px;
+    }
+
+    #book-image {
+        max-width: 100%;
+    }
+}
