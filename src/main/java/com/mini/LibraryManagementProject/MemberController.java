@@ -33,6 +33,11 @@ public class MemberController {
 	}
 	@PostMapping("addmem")
 	public String donemembers(Members obj) {
+		// replaces trigger members_before_insert (fills joinat with Indian time if empty)
+		if (obj.getJoinat() == null || obj.getJoinat().trim().isEmpty()) {
+			obj.setJoinat(java.time.LocalDateTime.now(java.time.ZoneId.of("Asia/Kolkata"))
+					.format(java.time.format.DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
+		}
 		memrepo.save(obj);
 		return "DoneMembers.jsp";
 	}
@@ -57,4 +62,3 @@ public class MemberController {
 			
 		}
 	}
-

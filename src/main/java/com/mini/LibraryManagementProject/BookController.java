@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -26,6 +27,13 @@ public class BookController {
 	private Book_auditRepository bookaurepo;
 	@Autowired
 	private Delete_Book_auditRepository delbookrepo;
+
+	// Replaces the old MySQL triggers (not allowed on Clever Cloud free plan).
+	// Same format as MySQL NOW(), but in Indian time.
+	private static String nowIst() {
+		return java.time.LocalDateTime.now(java.time.ZoneId.of("Asia/Kolkata"))
+				.format(java.time.format.DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+	}
 	
 	
 	@GetMapping("/")
@@ -62,6 +70,7 @@ public class BookController {
     	return "addbookform.html";
     }
     
+    @Transactional
     @PostMapping("/newbook")
     public String newBook(Books obj) {
     	 
@@ -71,6 +80,14 @@ public class BookController {
         }
 
         bookRepo.save(obj);
+
+        // replaces trigger books_after_insert
+        Books_audit audit = new Books_audit();
+        audit.setBookid(obj.getBookid());
+        audit.setTitle(obj.getTitle());
+        audit.setAuthor(obj.getAuthor());
+        audit.setAddedAt(nowIst());
+        bookaurepo.save(audit);
 
         return "doneNewBook.jsp";
     }
@@ -128,12 +145,18 @@ public class BookController {
     public String deleteForm() {
     	return "DeleteForm.html";
     }
+    @Transactional
     @PostMapping("DoneDelete")
     public String DoneDeletePage(String bookid)
     {
     	Books delbook=bookRepo.findByBookid(bookid);
     	if(delbook!=null) {
         bookRepo.delete(delbook);
+    	// replaces trigger books_after_delete
+    	Delete_Book_Audit delAudit = new Delete_Book_Audit();
+    	delAudit.setBookid(delbook.getBookid());
+    	delAudit.setDeletedat(nowIst());
+    	delbookrepo.save(delAudit);
     	return "DoneDelete.jsp";
     	}
     	else {
